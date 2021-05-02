@@ -5,7 +5,8 @@ SinOsc sine1, sine2;
 Serial myPort;
 String sval="0";
 int lf =10;
-float frq;
+float data,prevdata, frq ;
+
 
 
 void setup()
@@ -30,7 +31,9 @@ void draw() {
   GetSerialData();
   
  
-  frq=map(float(sval),20,200,100,2000);
+  frq=map(float(sval),20,200,100,1000);
+  
+  
   text("sine 1 freq: " + frq, 10, 50);
   sine1.freq(frq);
   sine2.freq(300);
